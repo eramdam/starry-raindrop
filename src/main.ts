@@ -14,14 +14,14 @@ const raindropAxios = axios.create({
 export const main = async () => {
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
-  console.log("Fetching all your starred repos...");
+  console.log(new Date(), "Fetching all your starred repos...");
   const stars = await octokit.paginate(
     octokit.rest.activity.listReposStarredByAuthenticatedUser,
     {
       per_page: 100,
     }
   );
-  console.log(`Found ${stars.length} starred repos!`);
+  console.log(new Date(), `Found ${stars.length} starred repos!`);
 
   const newRaindrops = stars.map((star) => {
     return {
@@ -35,7 +35,7 @@ export const main = async () => {
   });
   const chunks = chunk(newRaindrops, 100);
 
-  console.log(`Looping through chunks of 100 repos...`);
+  console.log(new Date(), `Looping through chunks of 100 repos...`);
   for (const chunk of chunks) {
     const existingUrlsRes = await raindropAxios.post("/import/url/exists", {
       urls: chunk.map((s) => s.link),
@@ -48,9 +48,9 @@ export const main = async () => {
       await raindropAxios.post("/raindrops", {
         items: toImport,
       });
-      console.log(`Added ${toImport.length} stars to Raindrop`);
+      console.log(new Date(), `Added ${toImport.length} stars to Raindrop`);
     } else {
-      console.log(`Skipped chunk (${chunk.length} repos)`);
+      console.log(new Date(), `Skipped chunk (${chunk.length} repos)`);
     }
   }
 };
