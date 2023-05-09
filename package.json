@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "cron": "forever start src/cron.js",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "clean": "rm src/*.js"
   },
   "repository": {
     "type": "git",

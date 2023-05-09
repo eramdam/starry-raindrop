@@ -1,0 +1,9 @@
+services:
+  app:
+    image: node:18-alpine
+    command: sh -c "npm install && npm run build && node src/cron.js"
+    working_dir: /app
+    volumes:
+      - ./:/app
+      # Creates empty folder to prevent node_modules from being overwritten by volume
+      - /app/node_modules
