@@ -8,7 +8,7 @@
     "cron": "forever start src/cron.js",
     "build": "tsc -p .",
     "clean": "rm src/*.js",
-    "docker": "npm install && npm run build && docker compose up"
+    "docker": "npm install && npm run build && docker compose up -d"
   },
   "repository": {
     "type": "git",
