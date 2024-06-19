@@ -1,3 +1,4 @@
-import { main } from "./main";
+import "dotenv/config";
+import { main } from "./main.js";
 
 main();

@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "cron": "forever start src/cron.js",
     "build": "tsc -p .",
+    "typecheck": "tsc -p . --noEmit",
     "clean": "rm src/*.js",
     "docker": "npm install && npm run build && docker compose up -d"
   },
@@ -21,18 +23,17 @@
   },
   "homepage": "https://github.com/eramdam/starry-raindrop#readme",
   "dependencies": {
-    "@types/cron": "^2.0.0",
-    "@types/lodash": "^4.14.182",
-    "axios": "^0.27.2",
-    "cron": "^2.1.0",
-    "dotenv": "^16.0.1",
+    "@types/lodash": "^4.17.5",
+    "axios": "^1.7.2",
+    "cron": "^3.1.7",
+    "dotenv": "^16.4.5",
     "forever": "^4.0.3",
     "lodash": "^4.17.21",
-    "octokit": "^2.0.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.7.4"
+    "octokit": "^4.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^1.0.1"
+    "@tsconfig/node18": "^18.2.4"
   }
 }

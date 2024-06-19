@@ -1,6 +1,6 @@
-import { Octokit } from "octokit";
 import axios from "axios";
-import _, { chunk, compact } from "lodash";
+import _ from "lodash";
+import { Octokit } from "octokit";
 
 const raindropAxios = axios.create({
   baseURL: "https://api.raindrop.io/rest/v1",
@@ -47,7 +47,7 @@ export const main = async () => {
       excerpt: star.repo.description,
     };
   });
-  const chunks = chunk(newRaindrops, 100);
+  const chunks = _.chunk(newRaindrops, 100);
 
   console.log(new Date(), `Looping through chunks of 100 repos...`);
   for (const chunk of chunks) {
