@@ -1,10 +1,10 @@
 name: "Sync GitHub stars with Raindrop"
-# on:
-#   schedule:
-#     - cron: "0 * * * *"
 on:
-  push:
-    branches: [main]
+  schedule:
+    - cron: "0 * * * *"
+# on:
+#   push:
+#     branches: [main]
 
 jobs:
   build-and-run:
