@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { Octokit } from "octokit";
 import axios from "axios";
 import _, { chunk, compact } from "lodash";
@@ -29,7 +28,7 @@ export const main = async () => {
   console.log(new Date(), `Found ${stars.length} starred repos!`);
 
   // Since we passed a custom header, the types aren't accurate anymore
-  type ActualStar = { starred_at: string; repo: typeof stars[number] };
+  type ActualStar = { starred_at: string; repo: (typeof stars)[number] };
 
   const newRaindrops = (stars as unknown as ActualStar[]).map((star) => {
     return {

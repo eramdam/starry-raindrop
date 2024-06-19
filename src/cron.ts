@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { CronJob } from "cron";
 import { main } from "./main";
 
