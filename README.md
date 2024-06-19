@@ -4,7 +4,7 @@ Based off [azedo/raindrop-io-github-starred-repos](https://github.com/azedo/rain
 
 # Requirements
 
-- Node 18
+- Node 20 (see `.nvmrc`)
 
 # Environment variables
 
