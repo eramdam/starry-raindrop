@@ -22,7 +22,7 @@ jobs:
 
       - name: run script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           RAINDROP_TOKEN: ${{ secrets.RAINDROP_TOKEN }}
           RAINDROP_COLLECTION_ID: ${{ secrets.RAINDROP_COLLECTION_ID }}
         run: node src/script.js

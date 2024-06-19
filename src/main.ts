@@ -11,7 +11,7 @@ const raindropAxios = axios.create({
 });
 
 export const main = async () => {
-  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+  const octokit = new Octokit({ auth: process.env.GH_TOKEN });
 
   console.log(new Date(), "Fetching all your starred repos...");
   const stars = await octokit.paginate(
