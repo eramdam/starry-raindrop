@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
+  "extends": "@tsconfig/node20/tsconfig.json",
   // Most ts-node options can be specified here using their programmatic names.
   "ts-node": {
     // It is faster to skip typechecking.
