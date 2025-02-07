@@ -1,6 +1,6 @@
 services:
   app:
-    image: node:18-alpine
+    image: node:22-alpine
     command: sh -c "node src/cron.js"
     working_dir: /app
     deploy:
